@@ -3,7 +3,11 @@ FROM tomcat:8-jre8
 ARG OPENAM_VERSION
 ENV OPENAM_VERSION ${OPENAM_VERSION:-13.0.0}
 
-RUN addgroup --gid 1001 openam && \
+RUN apt-get update && \
+    apt-get install -y zip net-tools && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+    addgroup --gid 1001 openam && \
     adduser --system --home "/home/openam" --shell /bin/bash --uid 1001 --ingroup openam  --disabled-password openam && \
     mkdir -p /openam /home/openam/conf /home/openam/admintools && \
     chown openam:openam -R /openam /usr/local/tomcat /home/openam
