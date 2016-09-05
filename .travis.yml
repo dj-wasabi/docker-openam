@@ -12,7 +12,7 @@ addons:
 before_install:
 - docker build -t wdijkerman/openam .
 - docker run -d -h openam.example.com --name openam -p 127.0.0.1:8080:8080 wdijkerman/openam
-- until curl -Is http://127.0.0.1:8080/openam/isAlive.jsp | head -n 1 | grep "200 OK" >/dev/null; do; sleep 5 ; done
+- until curl -Is http://127.0.0.1:8080/openam/isAlive.jsp | head -n 1 | grep "200 OK" >/dev/null; do sleep 5 ; done
 - docker ps -a
 
 install:
