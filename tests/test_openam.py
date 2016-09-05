@@ -1,6 +1,6 @@
 
 def test_socker(Socket):
-    assert Socket('tcp://0.0.0.0:8080').is_listening
+    assert Socket('tcp://:::8080').is_listening
 
 
 def test_user_details(User):
