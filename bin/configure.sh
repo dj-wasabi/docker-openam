@@ -29,9 +29,3 @@ EOF
 
 cd /home/openam/conf
 java -jar openam-configurator-tool-${OPENAM_VERSION}.jar --file configurator.conf -DSERVER_URL=http://$(hostname):8080
-
-#echo "INSTALL -- Install the OpenAM admin tools."
-#cd /home/openam/admintools
-#./setup --acceptLicense -p /openam
-#echo 'password_openam' > /home/openam/.pwd
-#chmod 400 /home/openam/.pwd
