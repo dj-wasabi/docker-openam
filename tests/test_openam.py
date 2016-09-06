@@ -22,3 +22,9 @@ def test_http_status():
     openam = requests.get('http://openam.example.com:8080/openam/XUI/#login/')
     openam_status_code = openam.status_code
     assert openam_status_code == 200
+
+
+def test_command(Command):
+    cmd = Command("/openam/opends/bin/status -D 'cn=Directory Manager' -w password_opendj")
+
+    assert cmd.rc == 0
