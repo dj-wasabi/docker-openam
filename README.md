@@ -51,5 +51,23 @@ $ curl 'http://openam.example.com:8080/version'
 13
 ```
 
+# Credentials
+
+The following credentials can be used:
+
+## OpenDJ
+
+```
+Username: cn=Directory Manager
+Password: password_opendj
+```
+
+## OpenAM
+
+```
+Username: amadmin
+Password: password_openam
+```
+
 **note:**
 This container is not suitable for production environments, there are no volumes for storing data and an "embedded" OpenDJ is used.
